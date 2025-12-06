@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/Home.css";
-import sammy from "../assets/sammy.jpg";
+import coder from "../assets/coder2.jpg";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -28,13 +28,15 @@ const Home = () => {
 
           <div className="resume">
             <b>DOWNLOAD RESUME HERE</b>
-            <motion.button
-              className="button-wrapper"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              DOWNLOAD
-            </motion.button>
+            <a href="/CV.pdf" download="Samuel-Kofi-Ntem-CV.pdf">
+              <motion.button
+                className="button-wrapper"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                DOWNLOAD
+              </motion.button>
+            </a>
           </div>
         </motion.div>
 
@@ -45,7 +47,7 @@ const Home = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <img src={sammy} alt="samuel kofi" />
+          <img src={coder} alt="samuel kofi" />
         </motion.div>
       </div>
     </motion.div>

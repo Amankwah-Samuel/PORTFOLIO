@@ -10,6 +10,8 @@ import logo from "../assets/logo.jpg";
 import portfolio from "../assets/portfolio.png";
 import js from "../assets/js.png";
 import django from "../assets/django.png";
+import python from "../assets/python.png";
+import database from "../assets/database.png";
 
 const Services = () => {
   const projectData = [
@@ -31,15 +33,7 @@ const Services = () => {
     },
     {
       id: 2,
-      title: "E-commerce Store 2 ",
-      description: "A simple online shop made using React & Firebase.",
-      image: logo,
-      liveLink: "#",
-      codeLink: "#",
-    },
-    {
-      id: 2,
-      title: "E-commerce Store",
+      title: "Not uploaded yet ",
       description: "A simple online shop made using React & Firebase.",
       image: "https://via.placeholder.com/300x200",
       liveLink: "#",
@@ -47,7 +41,7 @@ const Services = () => {
     },
     {
       id: 2,
-      title: "E-commerce Store",
+      title: "Not uploaded yet ",
       description: "A simple online shop made using React & Firebase.",
       image: "https://via.placeholder.com/300x200",
       liveLink: "#",
@@ -55,7 +49,15 @@ const Services = () => {
     },
     {
       id: 2,
-      title: "E-commerce Store",
+      title: "Not uploaded yet ",
+      description: "A simple online shop made using React & Firebase.",
+      image: "https://via.placeholder.com/300x200",
+      liveLink: "#",
+      codeLink: "#",
+    },
+    {
+      id: 2,
+      title: "Not uploaded yet ",
       description: "A simple online shop made using React & Firebase.",
       image: "https://via.placeholder.com/300x200",
       liveLink: "#",
@@ -80,7 +82,7 @@ const Services = () => {
         <div className="devs-1">
           <Card
             pic={Reactpic}
-            heading="REACT DEVELOPMENT"
+            heading="REACT JS"
             info=""
             bgColor="#FFFFFF"
           />
@@ -93,16 +95,16 @@ const Services = () => {
 
         <div className="devs-2">
           <Card
-            pic={Mentorship}
-            heading="MENTORSHIP"
+            pic={database}
+            heading="DATABASE "
             info=""
             bgColor="#FFFFFF"
           />
 
           <Card pic={Photoshop} heading="PHOTOSHOP" info="" bgColor="#FFFFFF" />
           <Card
-            pic={appDev}
-            heading="APP DEVELOPMENT"
+            pic={python}
+            heading="PYTHON"
             info=""
             bgColor="#FFFFFF"
           />

@@ -80,6 +80,10 @@
   border: none;
   color: white;
 }
+.resume a {
+  text-decoration: none;
+  color: inherit;
+}
 .resume button .hover {
   background: #0079aa;
 }
