@@ -30,7 +30,7 @@ const Home = () => {
           </p>
 
           <div className="hero-buttons">
-            <a href="/CV.pdf" download="Samuel-Kofi-Ntem-CV.pdf">
+            <a href="/FINALCV.pdf" download="Samuel-Kofi-Ntem-CV.pdf">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
