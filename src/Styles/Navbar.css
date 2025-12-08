@@ -1,64 +1,100 @@
+/* NAVBAR WRAPPER */
+.navbar-container {
+  width: 100%;
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 18px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* MAIN NAV */
 .navbar {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 170px;
-  position: relative;
 }
 
+/* LOGO */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #00c3ff;
+}
+
+/* LINKS */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
   list-style: none;
 }
 
+.nav-menu li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #111;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: #00c3ff;
+}
+
+/* BUTTON */
 .nav-link {
-  padding: 10px 20px;
- border-radius: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  background-color: #00c3ff;
-  color:white;
+  padding: 10px 22px;
+  background: #00c3ff;
+  color: white;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
   white-space: nowrap;
 }
 
-nav a {
-  text-decoration: none;
+.nav-link:hover {
+  background: #009dca;
 }
 
-nav a:hover {
-  color: rgb(53, 53, 235);
-}
-
+/* HAMBURGER */
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
   user-select: none;
 }
-.navbar-container {
-  background-color: #fff;
-  width: 100%;
-  padding: 24px;
-  border: 5px;
-}
 
-@media screen and (max-width: 768px) {
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
   .nav-menu {
-    flex-direction: column;
     position: absolute;
     top: 70px;
     left: 0;
-    background-color: #fff;
-    width: 100%; /* FULL WIDTH */
-    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 0;
     display: none;
-    z-index: 10;
-    gap: 20px;
-    align-items: center;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    margin-right: 0; /* REMOVE EXTRA SPACE */
+    z-index: 200;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   }
 
   .nav-menu.show {
@@ -69,8 +105,17 @@ nav a:hover {
     display: block;
   }
 
-  
   .navbar {
-    margin: 20px;
+    padding: 0 20px;
+  }
+
+  .nav-link {
+    display: none; 
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
   }
 }

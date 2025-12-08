@@ -1,85 +1,80 @@
 import React, { useEffect } from "react";
 import "../Styles/Contact.css";
-import contactImage from "../assets/contact.jpg"; // Ensure this path is correct
+import contactImage from "../assets/contact.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 900 });
   }, []);
 
   return (
-    <div className="main-div" id="contact">
-      <h1 data-aos="fade-down">FEEL FREE TO CONTACT ME!</h1>
+    <section className="contact-section" id="contact">
+      <h1 data-aos="fade-down">Let’s Work Together</h1>
 
-      <div className="contact-sections">
-        {/* Image Section */}
-        <div className="image-div" data-aos="zoom-in">
-          <img src={contactImage} alt="Contact" className="image" />
+      <div className="contact-wrapper">
+        
+        {/* IMAGE */}
+        <div className="contact-image" data-aos="zoom-in">
+          <img src={contactImage} alt="Contact" />
         </div>
 
-        {/* Form & Info Section */}
-        <div className="contact-1" data-aos="fade-up">
-          <div className="details-main">
-            {/* Contact Form */}
-            <div className="details-1">
-              <div className="fullName">
-                <label htmlFor="fullName">Full Name</label>
-                <input
-                  type="text"
-                  id="fullName"
-                  placeholder="e.g. Samuel Amankwah"
-                  required
-                  className="box"
-                />
-              </div>
-
-              <div className="email">
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  placeholder="Hello, there"
-                  required
-                  className="box"
-                  rows={4}
-                ></textarea>
-              </div>
-
-              <div className="message">
-                <label htmlFor="phone">Phone Number</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="e.g. +233 555 000 000"
-                  required
-                  className="box"
-                />
-              </div>
-
-              <div className="button-wrapper">
-                <button className="contact-button">Contact Me</button>
-              </div>
+        {/* CONTACT FORM + INFO */}
+        <div className="contact-container" data-aos="fade-up">
+          <div className="contact-form">
+            <div className="input-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="e.g. Samuel Amankwah" />
             </div>
 
-            {/* Contact Info */}
-            <div className="details-2" data-aos="fade-left">
-              <div className="contact-2">
-                <b><FaEnvelope /> Email</b>
+            <div className="input-group">
+              <label>Message</label>
+              <textarea placeholder="Write your message..." rows={4}></textarea>
+            </div>
+
+            <div className="input-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="e.g. +233 555 000 000" />
+            </div>
+
+            <button className="send-btn">Send Message</button>
+          </div>
+
+          {/* CONTACT INFO */}
+          <div className="contact-info" data-aos="fade-left">
+            <div className="info-box">
+              <FaEnvelope />
+              <div>
+                <b>Email</b>
                 <a href="mailto:samuelamakwah157@gmail.com">
                   samuelamakwah157@gmail.com
                 </a>
               </div>
-              <div className="location">
-                <b><FaMapMarkerAlt /> Based In</b>
-                Accra, Takoradi,<br />Ghana
+            </div>
+
+            <div className="info-box">
+              <FaPhoneAlt />
+              <div>
+                <b>Phone</b>
+                +233 537 387 548
+              </div>
+            </div>
+
+            <div className="info-box">
+              <FaMapMarkerAlt />
+              <div>
+                <b>Location</b>
+                Accra • Takoradi • Ghana
               </div>
             </div>
           </div>
+
         </div>
+
       </div>
-    </div>
+    </section>
   );
 };
 
