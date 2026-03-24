@@ -41,14 +41,14 @@ const About = () => {
           <h2 className="about-title">About Me</h2>
 
           <p>
-            I'm <strong>Samuel Amankwah</strong>, a passionate Level 300
+            I'm <strong>Samuel Kofi Ntem Amankwah</strong>, a passionate Level 300
             Computer Science student at the University of Ghana. I’m driven by
             the desire to build meaningful and innovative software solutions
             that solve real-world problems.
           </p>
 
           <p>
-            Over the years, I’ve developed a strong foundation in software
+            Over the years, I have  developed a strong foundation in software
             development and continuously push myself to learn new technologies
             and refine my craft. This portfolio showcases my journey,
             experiences, and the projects that reflect my growth as a developer.
