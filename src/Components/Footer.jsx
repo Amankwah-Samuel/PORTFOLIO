@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
 
         <p className="footer-text">
-          © {new Date().getFullYear()} Samuel Amankwah • All rights reserved.
+          © {new Date().getFullYear()} SamuelA Kofi Ntem Amankwah • All rights reserved.
         </p>
       </div>
     </footer>
