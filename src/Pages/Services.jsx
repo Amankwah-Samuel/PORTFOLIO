@@ -12,56 +12,7 @@ import js from "../assets/js.png";
 import django from "../assets/django.png";
 
 const Services = () => {
-  const projectData = [
-    {
-      id: 1,
-      title: "Portfolio Website",
-      description: "A personal portfolio built with React and Tailwind CSS.",
-      image: portfolio,
-      liveLink: "https://samuelamankwah.netlify.app/",
-      codeLink: "https://github.com/Sammy-157/MY-PORTFOLIO.git",
-    },
-    {
-      id: 2,
-      title: "E-commerce Store 1 ",
-      description: "A simple online shop made using React & Firebase.",
-      image: logo,
-      liveLink: "https://girlhood.netlify.app/",
-      codeLink: "https://github.com/Sammy-157/Fashion-Shop.git",
-    },
-    {
-      id: 2,
-      title: "NO UPLOADS YET  ",
-      description: "A simple online shop made using React & Firebase.",
-      image:"https://via.placeholder.com/300x200" ,
-      liveLink: "#",
-      codeLink: "#",
-    },
-    {
-      id: 2,
-      title: " NO UPLOADS YET ",
-      description: "A simple online shop made using React & Firebase.",
-      image: "https://via.placeholder.com/300x200",
-      liveLink: "#",
-      codeLink: "#",
-    },
-    {
-      id: 2,
-      title: " NO UPLOADS YET ",
-      description: "A simple online shop made using React & Firebase.",
-      image: "https://via.placeholder.com/300x200",
-      liveLink: "#",
-      codeLink: "#",
-    },
-    {
-      id: 2,
-      title: " NO UPLOADS YET ",
-      description: "A simple online shop made using React & Firebase.",
-      image: "https://via.placeholder.com/300x200",
-      liveLink: "#",
-      codeLink: "#",
-    },
-  ];
+  
 
   return (
     <motion.div
@@ -82,7 +33,7 @@ const Services = () => {
             pic={Reactpic}
             heading="REACT DEVELOPMENT"
             info=""
-            bgColor="#FFFFFF"
+            bgColor="#7c3aed"
           />
 
           <Card pic={django} heading="DJANGO" info="" bgColor="#FFFFFF" />
@@ -109,31 +60,7 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="projects-section" id="projects">
-        <h1 className="projects-title">MY PROJECTS </h1>
-        <div className="projects-grid">
-          {projectData.map((project) => (
-            <motion.div
-              key={project.id}
-              className="project-card"
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img src={project.image} alt={project.title} />
-              <h2>{project.title}</h2>
-              <p>{project.description}</p>
-              <div className="project-buttons">
-                <a href={project.liveLink} target="_blank" rel="noreferrer">
-                  Live Demo
-                </a>
-                <a href={project.codeLink} target="_blank" rel="noreferrer">
-                  Source Code
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      
     </motion.div>
   );
 };

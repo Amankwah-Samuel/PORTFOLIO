@@ -1,198 +1,126 @@
-/* Main wrapper for services section */
-.services-div {
-  background-color: #fefefe;
-  margin: 0 auto;
+/* ==========================
+   SERVICES SECTION
+========================== */
+
+.services-section {
   width: 100%;
-  max-width: 1200px;
-  padding: 20px;
-  margin-bottom: 60px;
-  box-sizing: border-box;
-   
+  min-height: 100vh;
+  padding: 100px 8%;
+  background: #050816;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Heading styling */
-.myservices-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
+/* Background Glow */
+
+.services-section::before,
+.services-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.2;
 }
 
-.myservices-div h1 {
-  font-size: 2rem;
-  color: black;
+.services-section::before {
+  width: 320px;
+  height: 320px;
+  background: #2563eb;
+  top: -120px;
+  left: -120px;
+}
+
+.services-section::after {
+  width: 280px;
+  height: 280px;
+  background: #7c3aed;
+  right: -100px;
+  bottom: -100px;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.services-header {
+  max-width: 750px;
+  margin: auto;
   text-align: center;
-  margin: 0;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 2;
 }
 
-/* Layout for all service cards */
-.all-devs {
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
+.section-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-/* Row layouts */
-.devs-1,
-.devs-2 {
-  display: flex;
-  flex-direction: row;
-  gap: 70px;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 10px;
+.services-header h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
-/* Tablet-friendly layout */
-@media (max-width: 1024px) {
-  .devs-1,
-  .devs-2 {
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .myservices-div h1 {
-    font-size: 2.5rem;
-  }
-
-  .all-devs {
-    gap: 40px;
-  }
-}
-
-/* Mobile screens (<= 768px) */
-@media (max-width: 768px) {
-  .services-div {
-    padding: 15px;
-  }
-
-  .myservices-div h1 {
-    font-size: 2rem;
-  }
-
-  .devs-1,
-  .devs-2 {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-  }
-
-  .devs-1 .main-card,
-  .devs-2 .main-card {
-    width: 90%;
-    max-width: 500px;
-  }
-}
-
-/* Smaller phones (<= 480px) */
-@media (max-width: 480px) {
-  .myservices-div h1 {
-    font-size: 1.6rem;
-  }
-
-  .devs-1 .main-card,
-  .devs-2 .main-card {
-    width: 100%;
-    padding: 12px;
-  }
-
-  .all-devs {
-    gap: 15px;
-  }
-}
-
-/* Optional Global Reset */
-* {
-  box-sizing: border-box;
-}
-
-/* === Projects Section Styling === */
-.projects-section {
-  margin-top: 60px;
-  padding: 40px 20px;
-  background-color: #fefefe;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-}
-
-.projects-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  background: black;
+.services-header h2 span {
+  background: linear-gradient(90deg, #38bdf8, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.projects-grid {
-  display: flex;
+.services-header p {
+  color: #b8c2d4;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.services-grid {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
-.project-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  width: 300px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease-in-out;
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 992px) {
+  .services-header h2 {
+    font-size: 2.4rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
 
-.project-card:hover {
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-}
+@media (max-width: 600px) {
+  .services-section {
+    padding: 80px 25px;
+  }
 
-.project-card img {
-  width: 50%;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.project-card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-.project-buttons a {
-  text-decoration: none;
-  margin: 0 10px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: #00c3ff;
-  color: white;
-  font-weight: bold;
-  transition: background 0.3s ease-in-out;
-}
-
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .projects-title {
+  .services-header h2 {
     font-size: 2rem;
   }
 
-  .project-card {
-    width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-buttons a {
-    padding: 6px 10px;
-    font-size: 0.85rem;
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 }

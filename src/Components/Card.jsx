@@ -1,20 +1,29 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../Styles/Card.css";
 
-const Card = (props) => {
+const Card = ({ icon, heading, info }) => {
   return (
-    <div className="main-card" style={{ backgroundColor: props.bgColor }}>
-      <div className="title">
-        <div className="card-image">
-          <img src={props.pic} alt="react" />
-        </div>
-        <div className="head-text">
-          <h1>{props.heading}</h1>
-        </div>
+    <motion.div
+      className="service-card"
+      whileHover={{
+        y: -10,
+        scale: 1.03,
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="service-icon">
+        {icon}
       </div>
-      <div className="information">{props.info}</div>
-  
-    </div>
+
+      <h3>{heading}</h3>
+
+      <p>{info}</p>
+
+      <span className="learn-more">
+        Learn More →
+      </span>
+    </motion.div>
   );
 };
 
