@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Services from "./Pages/Services";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Projects from "./Pages/Projects";
 import Footer from "./Components/Footer";
 
 function App() {
@@ -12,10 +13,12 @@ function App() {
     <Router>
       <Navbar />
       <div>
-        <Home />      {/* Home Section */}
-        <Services />  {/* Services Section */}
-        <About />     {/* About Section */}
-        <Contact />   {/* Contact Section */}
+        <Home />      
+        <Services />  
+        <Projects/>
+        <About />     
+        <Contact />   
+
       </div>
       <Footer />
     </Router>
