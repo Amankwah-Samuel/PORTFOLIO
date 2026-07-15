@@ -1,67 +1,141 @@
 import React from "react";
-import Card from "../Components/Card";
-import "../Styles/Services.css";
-import Reactpic from "../assets/react.svg";
-import Photoshop from "../assets/photoshop.png";
-import appDev from "../assets/app-development.png";
-import Mentorship from "../assets/leadership-development.png";
 import { motion } from "framer-motion";
-import logo from "../assets/logo.jpg";
-import portfolio from "../assets/portfolio.png";
-import js from "../assets/js.png";
-import django from "../assets/django.png";
+import {
+  FaReact,
+  FaPython,
+  FaJsSquare,
+  FaDatabase,
+  FaAws,
+} from "react-icons/fa";
+
+import {
+  SiDjango,
+  SiMysql,
+  SiPostgresql,
+  SiMongodb,
+} from "react-icons/si";
+
+import "../Styles/Services.css";
 
 const Services = () => {
-  
-
   return (
-    <motion.div
-      className="services-div"
-      id="services"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-    >
-      <div className="myservices-div">
-        <h1>MY SKILLS 😎</h1>
+    <section className="services-section" id="services">
+
+      <motion.div
+        className="services-header"
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: .7 }}
+        viewport={{ once: true }}
+      >
+
+        <span className="section-tag">
+          Tech Stack
+        </span>
+
+        <h2>
+          Technologies I
+          <span> Work With</span>
+        </h2>
+
+        <p>
+          These are the technologies I use to build responsive,
+          scalable and modern web applications.
+        </p>
+
+      </motion.div>
+
+      <div className="tech-grid">
+
+        <motion.div
+          className="tech-card"
+          whileHover={{ y: -8 }}
+        >
+
+          <h3>Frontend</h3>
+
+          <div className="tech-list">
+
+            <span><FaReact /> React</span>
+
+            <span><FaJsSquare /> JavaScript</span>
+
+          </div>
+
+        </motion.div>
+
+        <motion.div
+          className="tech-card"
+          whileHover={{ y: -8 }}
+        >
+
+          <h3>Backend</h3>
+
+          <div className="tech-list">
+
+            <span><FaPython /> Python</span>
+
+            <span><SiDjango /> Django</span>
+
+          </div>
+
+        </motion.div>
+
+        <motion.div
+          className="tech-card"
+          whileHover={{ y: -8 }}
+        >
+
+          <h3>Databases</h3>
+
+          <div className="tech-list">
+
+            <span><SiMongodb /> MongoDB</span>
+
+            <span><SiMysql /> MySQL</span>
+
+            <span><SiPostgresql /> PostgreSQL</span>
+
+          </div>
+
+        </motion.div>
+
+        <motion.div
+          className="tech-card"
+          whileHover={{ y: -8 }}
+        >
+
+          <h3>Cloud</h3>
+
+          <div className="tech-list">
+
+            <span><FaAws /> AWS Cloud</span>
+
+          </div>
+
+        </motion.div>
+
       </div>
 
-      <div className="all-devs">
-        <div className="devs-1">
-          <Card
-            pic={Reactpic}
-            heading="REACT DEVELOPMENT"
-            info=""
-            bgColor="#7c3aed"
-          />
+      <motion.div
+        className="learning-box"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: .3 }}
+        viewport={{ once: true }}
+      >
 
-          <Card pic={django} heading="DJANGO" info="" bgColor="#FFFFFF" />
-          
+        <h3>Always Learning 🚀</h3>
 
-          <Card pic={js} heading="JAVASCRIPT" info="" bgColor="#FFFFFF" />
-        </div>
+        <p>
+          I'm continuously improving my development skills by
+          building projects, exploring new technologies,
+          and learning industry best practices.
+        </p>
 
-        <div className="devs-2">
-          <Card
-            pic={Mentorship}
-            heading="MENTORSHIP"
-            info=""
-            bgColor="#FFFFFF"
-          />
+      </motion.div>
 
-          <Card pic={Photoshop} heading="PHOTOSHOP" info="" bgColor="#FFFFFF" />
-          <Card
-            pic={appDev}
-            heading="APP DEVELOPMENT"
-            info=""
-            bgColor="#FFFFFF"
-          />
-        </div>
-      </div>
-
-      
-    </motion.div>
+    </section>
   );
 };
 
