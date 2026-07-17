@@ -43,7 +43,7 @@ const Home = () => {
             transition={{ delay: 0.2 }}
           >
             <span className="status-dot"></span>
-            Available for Internship & Freelance
+            Available for Internship & Freelance 
           </motion.div>
 
           <p className="hero-greeting">Hello, I'm</p>
