@@ -52,7 +52,7 @@ const Services = () => {
           whileHover={{ y: -8 }}
         >
 
-          <h3>Frontend</h3>
+          <h3>Frontend Development</h3>
 
           <div className="tech-list">
 
@@ -69,7 +69,7 @@ const Services = () => {
           whileHover={{ y: -8 }}
         >
 
-          <h3>Backend</h3>
+          <h3>Backend Development</h3>
 
           <div className="tech-list">
 
