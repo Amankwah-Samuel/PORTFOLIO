@@ -97,7 +97,7 @@ const About = () => {
 
             <div className="stat-box">
               <h3>10+</h3>
-              <p>Projects</p>
+              <p>Projects and builds</p>
             </div>
 
             <div className="stat-box">
