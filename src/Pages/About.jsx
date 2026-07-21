@@ -101,7 +101,7 @@ const About = () => {
             </div>
 
             <div className="stat-box">
-              <h3>6+</h3>
+              <h3>10+</h3>
               <p>Technologies</p>
             </div>
 
