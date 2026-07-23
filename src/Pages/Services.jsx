@@ -125,7 +125,7 @@ const Services = () => {
         viewport={{ once: true }}
       >
 
-        <h3>Always Learning 🚀</h3>
+        <h3>Always Learning  and also eager to develop new skills </h3>
 
         <p>
           I'm continuously improving my development skills by
