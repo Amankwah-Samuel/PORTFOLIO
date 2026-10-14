@@ -6,7 +6,9 @@ import {
   FaJsSquare,
   FaDatabase,
   FaAws,
+  FaNodeJs,
 } from "react-icons/fa";
+
 
 import {
   SiDjango,
@@ -76,6 +78,8 @@ const Services = () => {
             <span><FaPython /> Python</span>
 
             <span><SiDjango /> Django</span>
+            
+              <span><FaNodeJs /> NodeJS</span>
 
           </div>
 

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {
   FaGithub,
   FaExternalLinkAlt,
+    
 } from "react-icons/fa";
 
 import "../Styles/Projects.css";
