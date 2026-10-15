@@ -32,7 +32,7 @@ const Services = () => {
       >
 
         <span className="section-tag">
-          Tech Stack
+          Tech Stack n and favorite 
         </span>
 
         <h2>
