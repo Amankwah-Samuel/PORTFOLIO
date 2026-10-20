@@ -32,12 +32,12 @@ const Services = () => {
       >
 
         <span className="section-tag">
-          Tech Stack n and favorite and other 
+          Tech Stack n and favorite and other YEAHkndncklnls
         </span>
 
         <h2>
           Technologies I
-          <span> Work With</span>
+          <span> Work With me and enjoy my services</span>
         </h2>
 
         <p>
