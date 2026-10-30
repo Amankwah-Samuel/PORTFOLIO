@@ -159,7 +159,8 @@
 }
 
 .project-links a {
-  flex: 1;
+  flex: X1
+  
   display: flex;
   justify-content: center;
   align-items: center;

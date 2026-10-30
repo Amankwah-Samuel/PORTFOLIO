@@ -49,7 +49,7 @@ const Home = () => {
           <p className="hero-greeting">Hello, I'm</p>
 
           <h1>
-            Samuel <span>Amankwah</span>
+            Samuel Kofi Ntem  <span>Amankwah</span>
           </h1>
 
           <h2>Full Stack Developer</h2>
