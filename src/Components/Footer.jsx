@@ -1,30 +1,57 @@
-import React from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
-import '../Styles/Footer.css';
+import React from "react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaWhatsapp,
+  FaGithub,
+  FaArrowUp,
+} from "react-icons/fa";
+import "../Styles/Footer.css";
+
+const socials = [
+  { icon: <FaGithub />, label: "GitHub", href: "https://github.com/Amankwah-Samuel" },
+  {
+    icon: <FaLinkedin />,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/samuel-amankwah-785341323",
+  },
+  { icon: <FaInstagram />, label: "Instagram", href: "https://www.instagram.com/digginssammy/" },
+  { icon: <FaFacebook />, label: "Facebook", href: "https://www.facebook.com/share/1AP8w2D8Mj/" },
+  { icon: <FaWhatsapp />, label: "WhatsApp", href: "https://wa.me/233537387548" },
+];
 
 const Footer = () => {
   return (
-    <footer className='footer'>
-      <div className="footer-content">
-
-        <div className="social-icons">
-          <a href="https://www.facebook.com/share/1AP8w2D8Mj/" target="_blank" rel="noopener noreferrer">
-            <FaFacebook />
+    <footer className="footer">
+      <div className="container footer-inner">
+        <div className="footer-brand">
+          <a href="#home" className="logo">
+            Samuel<span>.</span>
           </a>
-          <a href="https://www.instagram.com/digginssammy/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram />
-          </a>
-          <a href="https://wa.me/233537387548" target="_blank" rel="noopener noreferrer">
-            <FaWhatsapp />
-          </a>
-          <a href="https://www.linkedin.com/in/samuel-amankwah-785341323?" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin />
-          </a>
+          <p>Full Stack Developer · Accra, Ghana</p>
         </div>
 
-        <p className="footer-text">
-          © {new Date().getFullYear()} Samuel Kofi Ntem Amankwah • All rights reserved.
-        </p>
+        <div className="footer-socials">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div className="container footer-bottom">
+        <p>© {new Date().getFullYear()} Samuel Kofi Ntem Amankwah. All rights reserved.</p>
+        <a href="#home" className="to-top">
+          Back to top <FaArrowUp />
+        </a>
       </div>
     </footer>
   );

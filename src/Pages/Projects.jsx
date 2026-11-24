@@ -1,168 +1,108 @@
 import React from "react";
-import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaExternalLinkAlt,
-    
-} from "react-icons/fa";
-
+import { FaGithub, FaArrowRight } from "react-icons/fa";
+import Reveal from "../Components/Reveal";
 import "../Styles/Projects.css";
 
 import portfolio from "../assets/portfolio.png";
 import logo from "../assets/logo.jpg";
 
+const projects = [
+  {
+    title: "Portfolio Website",
+    category: "Personal site",
+    description:
+      "A responsive portfolio showcasing my projects, skills and experience as a software developer.",
+    image: portfolio,
+    technologies: ["React", "CSS", "Framer Motion"],
+    live: "https://samuelamankwah.netlify.app/",
+    github: "https://github.com/Amankwah-Samuel/PORTFOLIO",
+  },
+  {
+    title: "Girlhood Fashion Store",
+    category: "E-commerce",
+    description:
+      "An e-commerce front end with responsive product pages and a clean shopping experience for an online fashion store.",
+    image: logo,
+    technologies: ["React", "JavaScript", "Firebase"],
+    live: "https://girlshood.vercel.app/",
+    github: "https://github.com/Amankwah-Samuel/fashionShop",
+  },
+];
+
 const Projects = () => {
-
-  const projects = [
-
-    {
-      title: "Portfolio Website",
-
-      description:
-        "A modern responsive portfolio showcasing my projects, skills and experience as a software developer.",
-
-      image: portfolio,
-
-      technologies: [
-        "React",
-        "CSS",
-        "Framer Motion",
-      ],
-
-      live:
-        "https://samuelamankwah.netlify.app/",
-
-      github:
-        "https://github.com/Amankwah-Samuel/PORTFOLIO",
-    },
-
-    {
-      title: "Girlhood Fashion Store",
-
-      description:
-        "An e-commerce frontend with responsive pages and clean UI for an online fashion store.",
-
-      image: logo,
-
-      technologies: [
-        "React",
-        "JavaScript",
-        "Firebase",
-      ],
-
-      live:
-        "https://girlshood.vercel.app/",
-
-      github:
-        "https://github.com/Amankwah-Samuel/fashionShop",
-    },
-
-  ];
-
   return (
+    <section className="section projects" id="projects">
+      <div className="container">
+        <Reveal className="section-head projects-head">
+          <div>
+            <span className="eyebrow">Selected work</span>
+            <h2 className="section-title">
+              Things I've built.
+            </h2>
+          </div>
+          <p className="section-lead">
+            Projects I've built while learning, experimenting and solving
+            real-world problems.
+          </p>
+        </Reveal>
 
-    <section
-      className="projects-section"
-      id="projects"
-    >
+        <div className="projects-grid">
+          {projects.map((p, i) => (
+            <Reveal as="article" key={p.title} className="project-card" delay={0.1 * i}>
+              <a
+                href={p.live}
+                target="_blank"
+                rel="noreferrer"
+                className="project-media"
+                aria-label={`Open ${p.title} live site`}
+              >
+                <img src={p.image} alt="" loading="lazy" />
+              </a>
 
-      <motion.div
-        className="projects-header"
-        initial={{opacity:0,y:-40}}
-        whileInView={{opacity:1,y:0}}
-        transition={{duration:.7}}
-        viewport={{once:true}}
-      >
+              <div className="project-body">
+                <span className="project-category">{p.category}</span>
+                <h3>{p.title}</h3>
+                <p>{p.description}</p>
 
-        <span className="section-tag">
-          Featured Projects
-        </span>
+                <div className="project-tags">
+                  {p.technologies.map((t) => (
+                    <span className="chip" key={t}>
+                      {t}
+                    </span>
+                  ))}
+                </div>
 
-        <h2>
-          Things I've
-          <span> Built.</span>
-        </h2>
+                <div className="project-links">
+                  <a href={p.live} target="_blank" rel="noreferrer" className="btn-link">
+                    Live demo <FaArrowRight />
+                  </a>
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-gh"
+                  >
+                    <FaGithub /> Source
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
 
-        <p>
-          Here are some of the projects I've built while learning,
-          experimenting and solving real-world problems.
-        </p>
-
-      </motion.div>
-
-      <div className="projects-grid">
-
-        {projects.map((project,index)=>(
-
-          <motion.div
-
-            className="project-card"
-
-            key={index}
-
-            whileHover={{
-              y:-10
-            }}
-
+        <Reveal className="projects-more" delay={0.1}>
+          <a
+            href="https://github.com/Amankwah-Samuel"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-dark"
           >
-
-            <img
-              src={project.image}
-              alt={project.title}
-            />
-
-            <h3>
-              {project.title}
-            </h3>
-
-            <p>
-              {project.description}
-            </p>
-
-            <div className="tech-stack">
-
-              {project.technologies.map((tech,i)=>(
-
-                <span key={i}>
-                  {tech}
-                </span>
-
-              ))}
-
-            </div>
-
-            <div className="project-links">
-
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaExternalLinkAlt />
-                Live Demo
-              </a>
-
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub />
-                GitHub
-              </a>
-
-            </div>
-
-          </motion.div>
-
-        ))}
-
+            <FaGithub /> More on GitHub
+          </a>
+        </Reveal>
       </div>
-
     </section>
-
   );
-
 };
 
 export default Projects;

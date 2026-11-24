@@ -1,144 +1,103 @@
 import React from "react";
-import { motion } from "framer-motion";
 import {
   FaReact,
   FaPython,
   FaJsSquare,
-  FaDatabase,
   FaAws,
   FaNodeJs,
+  FaGithub,
+  FaHtml5,
+  FaCss3Alt,
 } from "react-icons/fa";
-
-
 import {
   SiDjango,
   SiMysql,
   SiPostgresql,
   SiMongodb,
+  SiExpress,
+  SiFirebase,
 } from "react-icons/si";
-
+import Reveal from "../Components/Reveal";
 import "../Styles/Services.css";
+
+const groups = [
+  {
+    title: "Frontend",
+    items: [
+      { icon: <FaReact />, name: "React" },
+      { icon: <FaJsSquare />, name: "JavaScript" },
+      { icon: <FaHtml5 />, name: "HTML" },
+      { icon: <FaCss3Alt />, name: "CSS" },
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      { icon: <FaNodeJs />, name: "Node.js" },
+      { icon: <SiExpress />, name: "Express" },
+      { icon: <FaPython />, name: "Python" },
+      { icon: <SiDjango />, name: "Django" },
+    ],
+  },
+  {
+    title: "Databases",
+    items: [
+      { icon: <SiMongodb />, name: "MongoDB" },
+      { icon: <SiMysql />, name: "MySQL" },
+      { icon: <SiPostgresql />, name: "PostgreSQL" },
+      { icon: <SiFirebase />, name: "Firebase" },
+    ],
+  },
+  {
+    title: "Cloud & Tools",
+    items: [
+      { icon: <FaAws />, name: "AWS" },
+      { icon: <FaGithub />, name: "Git & GitHub" },
+    ],
+  },
+];
 
 const Services = () => {
   return (
-    <section className="services-section" id="services">
+    <section className="section stack" id="stack">
+      <div className="container">
+        <Reveal className="section-head">
+          <span className="eyebrow">Tech stack</span>
+          <h2 className="section-title">
+            Tools I build with. <span className="muted">Every day.</span>
+          </h2>
+          <p className="section-lead">
+            The languages, frameworks and platforms I use to ship responsive,
+            scalable and modern web applications.
+          </p>
+        </Reveal>
 
-      <motion.div
-        className="services-header"
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: .7 }}
-        viewport={{ once: true }}
-      >
+        <div className="stack-grid">
+          {groups.map((g, i) => (
+            <Reveal key={g.title} className="stack-card" delay={0.08 * i}>
+              <span className="stack-index">0{i + 1}</span>
+              <h3>{g.title}</h3>
+              <ul>
+                {g.items.map((t) => (
+                  <li key={t.name}>
+                    {t.icon}
+                    {t.name}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </div>
 
-        <span className="section-tag">
-          Tech Stack n and favorite and other YEAHkndncklnls
-        </span>
-
-        <h2>
-          Technologies I
-          <span> Work With me and enjoy my services</span>
-        </h2>
-
-        <p>
-          These are the technologies I use to build responsive,
-          scalable and modern web applications.
-        </p>
-
-      </motion.div>
-
-      <div className="tech-grid">
-
-        <motion.div
-          className="tech-card"
-          whileHover={{ y: -8 }}
-        >
-
-          <h3>Frontend Development</h3>
-
-          <div className="tech-list">
-
-            <span><FaReact /> React</span>
-
-            <span><FaJsSquare /> JavaScript</span>
-
-          </div>
-
-        </motion.div>
-
-        <motion.div
-          className="tech-card"
-          whileHover={{ y: -8 }}
-        >
-
-          <h3>Backend Development</h3>
-
-          <div className="tech-list">
-
-            <span><FaPython /> Python</span>
-
-            <span><SiDjango /> Django</span>
-            
-              <span><FaNodeJs /> NodeJS</span>
-
-          </div>
-
-        </motion.div>
-
-        <motion.div
-          className="tech-card"
-          whileHover={{ y: -8 }}
-        >
-
-          <h3>Databases</h3>
-
-          <div className="tech-list">
-
-            <span><SiMongodb /> MongoDB</span>
-
-            <span><SiMysql /> MySQL</span>
-
-            <span><SiPostgresql /> PostgreSQL</span>
-
-          </div>
-
-        </motion.div>
-
-        <motion.div
-          className="tech-card"
-          whileHover={{ y: -8 }}
-        >
-
-          <h3>Cloud</h3>
-
-          <div className="tech-list">
-
-            <span><FaAws /> AWS Cloud</span>
-
-          </div>
-
-        </motion.div>
-
+        <Reveal className="learning" delay={0.1}>
+          <span className="learning-dot" />
+          <p>
+            <strong>Always learning.</strong> I keep sharpening my skills by
+            building projects, exploring new technologies and following
+            industry best practices.
+          </p>
+        </Reveal>
       </div>
-
-      <motion.div
-        className="learning-box"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: .3 }}
-        viewport={{ once: true }}
-      >
-
-        <h3>Always Learning  and also eager to develop new skills </h3>
-
-        <p>
-          I'm continuously improving my development skills by
-          building projects, exploring new technologies,
-          and learning industry best practices.
-        </p>
-
-      </motion.div>
-
     </section>
   );
 };

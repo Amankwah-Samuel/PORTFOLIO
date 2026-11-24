@@ -1,27 +1,26 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar"; 
+import { MotionConfig } from "framer-motion";
+import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
-import Services from "./Pages/Services";
 import About from "./Pages/About";
-import Contact from "./Pages/Contact";
+import Services from "./Pages/Services";
 import Projects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
 import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <Router>
+    <MotionConfig reducedMotion="user">
       <Navbar />
-      <div>
-        <Home />      
-        <Services />  
-        <Projects/>
-        <About />     
-        <Contact />   
-
-      </div>
+      <main>
+        <Home />
+        <About />
+        <Services />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
-    </Router>
+    </MotionConfig>
   );
 }
 

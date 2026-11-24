@@ -1,255 +1,105 @@
-/* ===========================
-   TECH STACK SECTION
-=========================== */
-
-.services-section {
-  width: 100%;
-  padding: 100px 8%;
-  background: #050816;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
+/* Dark band — palette colour 2 */
+.stack {
+  background: var(--ink);
+  color: var(--white);
 }
 
-/* Background Glow */
+.stack .section-title .muted {
+  color: #6e6e73;
+}
 
-.services-section::before,
-.services-section::after {
-  content: "";
-  position: absolute;
+.stack .section-lead {
+  color: var(--gray);
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stack-card {
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background: rgba(245, 245, 247, 0.05);
+  border: 1px solid var(--line-dark);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.stack-card:hover {
+  border-color: rgba(0, 122, 255, 0.6);
+  transform: translateY(-4px);
+}
+
+.stack-index {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.stack-card h3 {
+  margin: 10px 0 22px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.stack-card ul {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.stack-card li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: rgba(245, 245, 247, 0.85);
+}
+
+.stack-card li svg {
+  font-size: 18px;
+  color: var(--gray);
+}
+
+.learning {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 40px;
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-dark);
+}
+
+.learning-dot {
+  flex-shrink: 0;
+  margin-top: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: .15;
+  background: var(--blue);
 }
 
-.services-section::before{
-  width:300px;
-  height:300px;
-  background:#2563eb;
-  top:-120px;
-  left:-120px;
+.learning p {
+  color: var(--gray);
+  font-size: 16px;
 }
 
-.services-section::after{
-  width:260px;
-  height:260px;
-  background:#7c3aed;
-  bottom:-100px;
-  right:-100px;
+.learning strong {
+  color: var(--white);
+  font-weight: 600;
 }
 
-/* ===========================
-   HEADER
-=========================== */
-
-.services-header{
-  max-width:700px;
-  margin:auto;
-  text-align:center;
-  margin-bottom:70px;
-  position:relative;
-  z-index:2;
+@media (max-width: 1000px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.section-tag{
-  display:inline-block;
-  padding:8px 18px;
-  border-radius:40px;
-  background:rgba(56,189,248,.12);
-  border:1px solid rgba(56,189,248,.25);
-  color:#38bdf8;
-  font-weight:600;
-  margin-bottom:18px;
-}
-
-.services-header h2{
-  font-size:3rem;
-  margin-bottom:18px;
-}
-
-.services-header h2 span{
-  background:linear-gradient(90deg,#38bdf8,#7c3aed);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.services-header p{
-  color:#b8c2d4;
-  line-height:1.8;
-}
-
-/* ===========================
-   GRID
-=========================== */
-
-.tech-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:28px;
-  position:relative;
-  z-index:2;
-}
-
-/* ===========================
-   CATEGORY CARD
-=========================== */
-
-.tech-card{
-  background:rgba(255,255,255,.05);
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:22px;
-  padding:30px;
-  transition:.35s;
-}
-
-.tech-card:hover{
-  transform:translateY(-8px);
-  border-color:#38bdf8;
-  box-shadow:0 15px 35px rgba(37,99,235,.25);
-}
-
-.tech-card h3{
-  font-size:1.4rem;
-  margin-bottom:22px;
-}
-
-/* ===========================
-   TECHNOLOGY PILLS
-=========================== */
-
-.tech-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.tech-list span{
-  display:flex;
-  align-items:center;
-  gap:8px;
-
-  padding:10px 16px;
-
-  border-radius:40px;
-
-  background:rgba(255,255,255,.06);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  font-size:.95rem;
-
-  transition:.3s;
-}
-
-.tech-list span:hover{
-
-  background:#2563eb;
-
-  border-color:#38bdf8;
-
-  transform:scale(1.05);
-
-}
-
-.tech-list svg{
-
-  font-size:1.1rem;
-
-  color:#38bdf8;
-
-}
-
-/* ===========================
-   LEARNING BOX
-=========================== */
-
-.learning-box{
-
-  max-width:900px;
-
-  margin:70px auto 0;
-
-  text-align:center;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  padding:40px;
-
-  border-radius:24px;
-
-}
-
-.learning-box h3{
-
-  font-size:2rem;
-
-  margin-bottom:15px;
-
-}
-
-.learning-box p{
-
-  color:#b8c2d4;
-
-  line-height:1.8;
-
-  max-width:650px;
-
-  margin:auto;
-
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:900px){
-
-.services-header h2{
-
-font-size:2.4rem;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.services-section{
-
-padding:80px 25px;
-
-}
-
-.tech-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.learning-box{
-
-padding:30px 20px;
-
-}
-
-.services-header h2{
-
-font-size:2rem;
-
-}
-
-.learning-box h3{
-
-font-size:1.6rem;
-
-}
-
+@media (max-width: 560px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
 }

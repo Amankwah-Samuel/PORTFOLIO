@@ -1,64 +1,73 @@
-/* FOOTER CONTAINER */
 .footer {
-  width: 100%;
-  padding: 45px 20px;
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  padding: 48px 0 32px;
+}
+
+.footer-inner {
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  color: white;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
-/* WRAPPER */
-.footer-content {
-  text-align: center;
-  max-width: 900px;
-  width: 100%;
+.footer-brand .logo {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
-/* SOCIAL ICONS */
-.social-icons {
+.footer-brand .logo span {
+  color: var(--blue);
+}
+
+.footer-brand p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.footer-socials {
   display: flex;
-  justify-content: center;
-  gap: 28px;
-  font-size: 32px;
-  margin-bottom: 20px;
+  gap: 8px;
 }
 
-.social-icons a {
-  transition: 0.3s;
+.footer-socials a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--text-2);
+  font-size: 18px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Glow hover effect */
-.social-icons a:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+.footer-socials a:hover {
+  background: var(--ink);
+  color: var(--white);
 }
 
-/* Brand Colors */
-.social-icons a:nth-child(1) { color: #3b5998; }
-.social-icons a:nth-child(2) { color: #e1306c; }
-.social-icons a:nth-child(3) { color: #25d366; }
-.social-icons a:nth-child(4) { color: #0e76a8; }
-
-/* TEXT */
-.footer-text {
-  font-size: 15px;
-  opacity: 0.85;
-  letter-spacing: 0.5px;
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--text-2);
 }
 
-/* MOBILE */
-@media (max-width: 500px) {
-  .social-icons {
-    font-size: 28px;
-    gap: 20px;
-  }
+.to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
 
-  .footer-text {
-    font-size: 13px;
-  }
+.to-top:hover {
+  color: var(--blue);
 }
