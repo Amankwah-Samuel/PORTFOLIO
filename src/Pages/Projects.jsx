@@ -3,27 +3,22 @@ import { FaGithub, FaArrowRight } from "react-icons/fa";
 import Reveal from "../Components/Reveal";
 import "../Styles/Projects.css";
 
-import portfolio from "../assets/portfolio.png";
-import logo from "../assets/logo.jpg";
-
+// Leave `live` or `github` as "" until the link is ready — the button will
+// show as "Coming soon" automatically.
 const projects = [
   {
-    title: "Portfolio Website",
-    category: "Personal site",
+    title: "Football Quiz App",
+    category: "Mobile app",
     description:
-      "A responsive portfolio showcasing my projects, skills and experience as a software developer.",
-    image: portfolio,
-    technologies: ["React", "CSS", "Framer Motion"],
-    live: "https://samuelamankwah.netlify.app/",
-    github: "https://github.com/Amankwah-Samuel/PORTFOLIO",
+      "An interactive football trivia quiz that tests your knowledge of players, clubs and tournaments, with instant feedback and score tracking.",
+    live: "https://expo.dev/accounts/samuel-10/projects/quizapp/builds/b21346cf-ef11-43bf-85a7-1f085df4a168",
+    github: "https://github.com/Amankwah-Samuel/FOOTBALL-QUIZ-APP",
   },
   {
     title: "Girlhood Fashion Store",
     category: "E-commerce",
     description:
       "An e-commerce front end with responsive product pages and a clean shopping experience for an online fashion store.",
-    image: logo,
-    technologies: ["React", "JavaScript", "Firebase"],
     live: "https://girlshood.vercel.app/",
     github: "https://github.com/Amankwah-Samuel/fashionShop",
   },
@@ -36,12 +31,10 @@ const Projects = () => {
         <Reveal className="section-head projects-head">
           <div>
             <span className="eyebrow">Selected work</span>
-            <h2 className="section-title">
-              Things I've built.
-            </h2>
+            <h2 className="section-title">Things I&apos;ve built.</h2>
           </div>
           <p className="section-lead">
-            Projects I've built while learning, experimenting and solving
+            Projects I&apos;ve built while learning, experimenting and solving
             real-world problems.
           </p>
         </Reveal>
@@ -49,42 +42,27 @@ const Projects = () => {
         <div className="projects-grid">
           {projects.map((p, i) => (
             <Reveal as="article" key={p.title} className="project-card" delay={0.1 * i}>
-              <a
-                href={p.live}
-                target="_blank"
-                rel="noreferrer"
-                className="project-media"
-                aria-label={`Open ${p.title} live site`}
-              >
-                <img src={p.image} alt="" loading="lazy" />
-              </a>
-
-              <div className="project-body">
+              <div className="project-top">
+                <span className="project-index">0{i + 1}</span>
                 <span className="project-category">{p.category}</span>
-                <h3>{p.title}</h3>
-                <p>{p.description}</p>
+              </div>
 
-                <div className="project-tags">
-                  {p.technologies.map((t) => (
-                    <span className="chip" key={t}>
-                      {t}
-                    </span>
-                  ))}
-                </div>
+              <h3>{p.title}</h3>
+              <p>{p.description}</p>
 
-                <div className="project-links">
+              <div className="project-links">
+                {p.live ? (
                   <a href={p.live} target="_blank" rel="noreferrer" className="btn-link">
                     Live demo <FaArrowRight />
                   </a>
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project-gh"
-                  >
+                ) : (
+                  <span className="project-soon">Live demo coming soon</span>
+                )}
+                {p.github && (
+                  <a href={p.github} target="_blank" rel="noreferrer" className="project-gh">
                     <FaGithub /> Source
                   </a>
-                </div>
+                )}
               </div>
             </Reveal>
           ))}
