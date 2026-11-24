@@ -51,10 +51,10 @@ const Projects = () => {
       ],
 
       live:
-        "https://girlhood.netlify.app/",
+        "https://girlshood.vercel.app/",
 
       github:
-        "https://github.com/Sammy-157/Fashion-Shop",
+        "https://github.com/Amankwah-Samuel/fashionShop",
     },
 
   ];
