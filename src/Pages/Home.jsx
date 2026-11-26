@@ -23,7 +23,7 @@ const Home = () => {
       >
         <span className="status-badge">
           <span className="status-dot" />
-          Available for internships &amp; freelance
+          Available for internships and jobs &amp; freelance
         </span>
 
         <h1>
